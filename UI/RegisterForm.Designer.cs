@@ -1,18 +1,9 @@
-﻿using SarasaviLMS.Properties;
-
-namespace SarasaviLMS.UI
+﻿namespace SarasaviLMS.UI
 {
     partial class RegisterForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -24,151 +15,132 @@ namespace SarasaviLMS.UI
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblConfirmPassword = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblNIC = new System.Windows.Forms.Label();
+            this.lblSex = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNIC = new System.Windows.Forms.TextBox();
+            this.txtSex = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.text1 = new System.Windows.Forms.Label();
             this.text_AlreadyHaveAnAccount = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblUsername
+            // lblName
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUsername.Location = new System.Drawing.Point(352, 207);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(71, 17);
-            this.lblUsername.TabIndex = 6;
-            this.lblUsername.Text = "Username";
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lblName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblName.Location = new System.Drawing.Point(352, 207);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(48, 17);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name";
             // 
-            // lblEmail
+            // lblNIC
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEmail.Location = new System.Drawing.Point(352, 250);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(43, 17);
-            this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "Email";
+            this.lblNIC.AutoSize = true;
+            this.lblNIC.BackColor = System.Drawing.Color.Transparent;
+            this.lblNIC.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lblNIC.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNIC.Location = new System.Drawing.Point(352, 250);
+            this.lblNIC.Name = "lblNIC";
+            this.lblNIC.Size = new System.Drawing.Size(32, 17);
+            this.lblNIC.TabIndex = 2;
+            this.lblNIC.Text = "NIC";
             // 
-            // lblPassword
+            // lblSex
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPassword.Location = new System.Drawing.Point(352, 290);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(69, 17);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Password";
+            this.lblSex.AutoSize = true;
+            this.lblSex.BackColor = System.Drawing.Color.Transparent;
+            this.lblSex.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lblSex.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSex.Location = new System.Drawing.Point(352, 290);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(28, 17);
+            this.lblSex.TabIndex = 3;
+            this.lblSex.Text = "Sex";
             // 
-            // lblConfirmPassword
+            // lblAddress
             // 
-            this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmPassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(352, 330);
-            this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(125, 17);
-            this.lblConfirmPassword.TabIndex = 3;
-            this.lblConfirmPassword.Text = "Confirm Password";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lblAddress.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAddress.Location = new System.Drawing.Point(352, 330);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(57, 17);
+            this.lblAddress.TabIndex = 4;
+            this.lblAddress.Text = "Address";
             // 
-            // txtUsername
+            // txtName
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.Black;
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtUsername.Location = new System.Drawing.Point(483, 207);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(150, 22);
-            this.txtUsername.TabIndex = 2;
+            this.txtName.BackColor = System.Drawing.Color.Black;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtName.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtName.Location = new System.Drawing.Point(483, 207);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(150, 22);
+            this.txtName.TabIndex = 5;
             // 
-            // txtEmail
+            // txtNIC
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.Black;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtEmail.Location = new System.Drawing.Point(483, 246);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(150, 22);
-            this.txtEmail.TabIndex = 2;
+            this.txtNIC.BackColor = System.Drawing.Color.Black;
+            this.txtNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNIC.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtNIC.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtNIC.Location = new System.Drawing.Point(483, 246);
+            this.txtNIC.Name = "txtNIC";
+            this.txtNIC.Size = new System.Drawing.Size(150, 22);
+            this.txtNIC.TabIndex = 6;
             // 
-            // txtPassword
+            // txtSex
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.Black;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtPassword.Location = new System.Drawing.Point(483, 285);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(150, 22);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtSex.BackColor = System.Drawing.Color.Black;
+            this.txtSex.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSex.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtSex.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtSex.Location = new System.Drawing.Point(483, 285);
+            this.txtSex.Name = "txtSex";
+            this.txtSex.Size = new System.Drawing.Size(150, 22);
+            this.txtSex.TabIndex = 7;
             // 
-            // txtConfirmPassword
+            // txtAddress
             // 
-            this.txtConfirmPassword.BackColor = System.Drawing.Color.Black;
-            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtConfirmPassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(483, 326);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(150, 22);
-            this.txtConfirmPassword.TabIndex = 2;
-            this.txtConfirmPassword.UseSystemPasswordChar = true;
+            this.txtAddress.BackColor = System.Drawing.Color.Black;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtAddress.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtAddress.Location = new System.Drawing.Point(483, 326);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(150, 22);
+            this.txtAddress.TabIndex = 8;
             // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.Transparent;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnRegister.ForeColor = System.Drawing.Color.MediumPurple;
             this.btnRegister.Location = new System.Drawing.Point(355, 375);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRegister.Size = new System.Drawing.Size(278, 32);
-            this.btnRegister.TabIndex = 8;
+            this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(932, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // text1
             // 
             this.text1.AutoSize = true;
             this.text1.BackColor = System.Drawing.Color.Transparent;
-            this.text1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.text1.ForeColor = System.Drawing.SystemColors.Control;
             this.text1.Location = new System.Drawing.Point(349, 124);
             this.text1.Name = "text1";
@@ -180,14 +152,14 @@ namespace SarasaviLMS.UI
             // 
             this.text_AlreadyHaveAnAccount.AutoSize = true;
             this.text_AlreadyHaveAnAccount.BackColor = System.Drawing.Color.Transparent;
-            this.text_AlreadyHaveAnAccount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_AlreadyHaveAnAccount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Underline);
             this.text_AlreadyHaveAnAccount.ForeColor = System.Drawing.SystemColors.Control;
             this.text_AlreadyHaveAnAccount.Location = new System.Drawing.Point(352, 165);
             this.text_AlreadyHaveAnAccount.Name = "text_AlreadyHaveAnAccount";
             this.text_AlreadyHaveAnAccount.Size = new System.Drawing.Size(156, 16);
             this.text_AlreadyHaveAnAccount.TabIndex = 11;
             this.text_AlreadyHaveAnAccount.Text = "Already have an account?";
-            this.text_AlreadyHaveAnAccount.Click += new System.EventHandler(this.text_AlreadyhaveAnAccount_Click);
+            this.text_AlreadyHaveAnAccount.Click += new System.EventHandler(this.text_AlreadyHaveAnAccount_Click);
             // 
             // RegisterForm
             // 
@@ -199,41 +171,37 @@ namespace SarasaviLMS.UI
             this.Controls.Add(this.text_AlreadyHaveAnAccount);
             this.Controls.Add(this.text1);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.lblConfirmPassword);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtSex);
+            this.Controls.Add(this.txtNIC);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblSex);
+            this.Controls.Add(this.lblNIC);
+            this.Controls.Add(this.lblName);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblConfirmPassword;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblNIC;
+        private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtNIC;
+        private System.Windows.Forms.TextBox txtSex;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.PictureBox pictureBox1;
-
-        #endregion
-
         private System.Windows.Forms.Label text1;
         private System.Windows.Forms.Label text_AlreadyHaveAnAccount;
+
+        #endregion
     }
 }

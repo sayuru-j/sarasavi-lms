@@ -1,13 +1,8 @@
-﻿using SarasaviLMS.Services;
+﻿using SarasaviLMS.Models;
+using SarasaviLMS.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SarasaviLMS.UI
 {
@@ -23,60 +18,36 @@ namespace SarasaviLMS.UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text;
+            string name = txtName.Text.Trim();
+            string nic = txtNIC.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(nic))
             {
-                MessageBox.Show("Please enter both username and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter both Name and NIC.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Attempt to authenticate the user
-            var user = _userService.AuthenticateUser(username, password);
+            // Fetch user by NIC and Name
+            var user = _userService.GetUserByNIC(nic);
 
-            if (user != null)
+            if (user != null && user.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK;  // Set DialogResult to OK on successful login
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.DialogResult = DialogResult.None;
+                MessageBox.Show("Invalid Name or NIC.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Retry;  // Set DialogResult to Retry to signal registration
-            this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
+            this.Show();  // Show LoginForm again after RegisterForm is closed
         }
     }
 }

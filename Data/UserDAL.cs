@@ -9,9 +9,9 @@ namespace SarasaviLMS.Data
     {
         private readonly DatabaseHelper _helper;
 
-        public UserDAL() { 
-            DatabaseHelper databaseHelper = new DatabaseHelper();
-            _helper = databaseHelper;
+        public UserDAL()
+        {
+            _helper = new DatabaseHelper();
         }
 
         public bool SaveUser(User user)
@@ -22,12 +22,13 @@ namespace SarasaviLMS.Data
                 {
                     conn.Open();
 
-                    string query = "INSERT INTO Users (Username, Email, PasswordHash, Role) VALUES (@Username, @Email, @PasswordHash, @Role)";
+                    string query = "INSERT INTO [User] (Name, NIC, Sex, Address, Role) VALUES (@Name, @NIC, @Sex, @Address, @Role)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Username", user.Username);
-                        cmd.Parameters.AddWithValue("@Email", user.Email);
-                        cmd.Parameters.AddWithValue("@PasswordHash", user.Password); // Assuming the password is already hashed
+                        cmd.Parameters.AddWithValue("@Name", user.Name);
+                        cmd.Parameters.AddWithValue("@NIC", user.NIC);
+                        cmd.Parameters.AddWithValue("@Sex", user.Sex);
+                        cmd.Parameters.AddWithValue("@Address", user.Address);
                         cmd.Parameters.AddWithValue("@Role", user.Role);
 
                         cmd.ExecuteNonQuery();
@@ -47,7 +48,7 @@ namespace SarasaviLMS.Data
             }
         }
 
-        public User GetUserByUsername(string username)
+        public User GetUserByNIC(string nic)
         {
             using (SqlConnection conn = _helper.GetConnection())
             {
@@ -55,10 +56,10 @@ namespace SarasaviLMS.Data
                 {
                     conn.Open();
 
-                    string query = "SELECT UserID, Username, Email, PasswordHash, Role FROM Users WHERE Username = @Username";
+                    string query = "SELECT UserId, Name, NIC, Sex, Address, Role FROM [User] WHERE NIC = @NIC";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@NIC", nic);
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -66,9 +67,11 @@ namespace SarasaviLMS.Data
                             {
                                 return new User
                                 {
-                                    Username = reader["Username"].ToString(),
-                                    Email = reader["Email"].ToString(),
-                                    Password = reader["PasswordHash"].ToString(),
+                                    UserId = Convert.ToInt32(reader["UserId"]),
+                                    Name = reader["Name"].ToString(),
+                                    NIC = reader["NIC"].ToString(),
+                                    Sex = reader["Sex"].ToString(),
+                                    Address = reader["Address"].ToString(),
                                     Role = reader["Role"].ToString()
                                 };
                             }
@@ -77,18 +80,18 @@ namespace SarasaviLMS.Data
                 }
                 catch (SqlException ex)
                 {
-                    LogError("SQL Error in GetUserByUsername", ex);
+                    LogError("SQL Error in GetUserByNIC", ex);
                 }
                 catch (Exception ex)
                 {
-                    LogError("Unexpected Error in GetUserByUsername", ex);
+                    LogError("Unexpected Error in GetUserByNIC", ex);
                 }
             }
 
             return null; // Return null if user not found or in case of an error
         }
 
-        public bool IsEmailTaken(string email)
+        public bool IsNICUnique(string nic)
         {
             using (SqlConnection conn = _helper.GetConnection())
             {
@@ -96,53 +99,23 @@ namespace SarasaviLMS.Data
                 {
                     conn.Open();
 
-                    string query = "SELECT COUNT(1) FROM Users WHERE Email = @Email";
+                    string query = "SELECT COUNT(1) FROM [User] WHERE NIC = @NIC";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@NIC", nic);
 
                         int count = (int)cmd.ExecuteScalar();
-                        return count > 0;
+                        return count == 0; // Return true if NIC is unique
                     }
                 }
                 catch (SqlException ex)
                 {
-                    LogError("SQL Error in IsEmailTaken", ex);
+                    LogError("SQL Error in IsNICUnique", ex);
                     return false;
                 }
                 catch (Exception ex)
                 {
-                    LogError("Unexpected Error in IsEmailTaken", ex);
-                    return false;
-                }
-            }
-        }
-
-        public bool IsUsernameTaken(string username)
-        {
-            using (SqlConnection conn = _helper.GetConnection())
-            {
-                try
-                {
-                    conn.Open();
-
-                    string query = "SELECT COUNT(1) FROM Users WHERE Username = @Username";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Username", username);
-
-                        int count = (int)cmd.ExecuteScalar();
-                        return count > 0;
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    LogError("SQL Error in IsUsernameTaken", ex);
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    LogError("Unexpected Error in IsUsernameTaken", ex);
+                    LogError("Unexpected Error in IsNICUnique", ex);
                     return false;
                 }
             }

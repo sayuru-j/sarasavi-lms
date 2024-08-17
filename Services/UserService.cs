@@ -7,33 +7,12 @@ namespace SarasaviLMS.Services
 {
     internal class UserService
     {
-        private UserDAL _user;
+        private readonly UserDAL _userDAL;
 
-        public UserService() { 
-            UserDAL user = new UserDAL();
-            _user = user;
-        }
-
-        public ValidationResult ValidateUser(User user)
+        public UserService()
         {
-            if (string.IsNullOrWhiteSpace(user.Username))
-            {
-                return new ValidationResult(false, "Username is required.");
-            }
-
-            if (!IsValidEmail(user.Email))
-            {
-                return new ValidationResult(false, "Invalid email format.");
-            }
-
-            if (string.IsNullOrWhiteSpace(user.Password) || user.Password.Length < 6)
-            {
-                return new ValidationResult(false, "Password must be at least 6 characters long.");
-            }
-
-            return new ValidationResult(true, "Validation succeeded.");
+            _userDAL = new UserDAL();
         }
-
 
         public bool AddNewUser(User user, out string errorMessage)
         {
@@ -45,19 +24,8 @@ namespace SarasaviLMS.Services
                 return false;
             }
 
-            // Hash the password
-            string hashedPassword = PasswordHelper.HashPassword(user.Password);
-
-            if (hashedPassword == null)
-            {
-                errorMessage = "Failed to hash the password.";
-                return false;
-            }
-
-            user.Password = hashedPassword; // Replace plain password with the hashed password
-
             // Save the user using the DAL
-            if (_user.SaveUser(user))
+            if (_userDAL.SaveUser(user))
             {
                 errorMessage = null;
                 return true;
@@ -69,31 +37,74 @@ namespace SarasaviLMS.Services
             }
         }
 
-        public User AuthenticateUser(string username, string password)
+        public User GetUserByNIC(string nic)
         {
-            // Fetch user by username
-            var user = _user.GetUserByUsername(username);
-            if (user == null)
-            {
-                return null; // User not found
-            }
-
-            // Verify the password
-            if (PasswordHelper.VerifyPassword(password, user.Password))
-            {
-                return user; // Authentication successful
-            }
-            else
-            {
-                return null; // Password does not match
-            }
+            // Fetch user by NIC
+            return _userDAL.GetUserByNIC(nic);
         }
 
-        private bool IsValidEmail(string email)
+        public bool IsNICUnique(string nic)
         {
-            // Simple email validation using regex
-            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            return Regex.IsMatch(email, emailPattern);
+            // Check if the NIC is unique
+            return _userDAL.IsNICUnique(nic);
+        }
+
+        private ValidationResult ValidateUser(User user)
+        {
+            if (string.IsNullOrWhiteSpace(user.Name))
+            {
+                return new ValidationResult(false, "Name is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(user.NIC))
+            {
+                return new ValidationResult(false, "NIC is required.");
+            }
+
+            /*if (!IsValidNIC(user.NIC))
+            {
+                return new ValidationResult(false, "Invalid NIC format.");
+            }*/
+
+            if (string.IsNullOrWhiteSpace(user.Sex) || !(user.Sex == "M" || user.Sex == "F"))
+            {
+                return new ValidationResult(false, "Valid Sex (M or F) is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(user.Address))
+            {
+                return new ValidationResult(false, "Address is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(user.Role))
+            {
+                return new ValidationResult(false, "Role is required.");
+            }
+
+            if (!IsNICUnique(user.NIC))
+            {
+                return new ValidationResult(false, "NIC already exists.");
+            }
+
+            return new ValidationResult(true, "Validation succeeded.");
+        }
+
+        private bool IsValidNIC(string nic)
+        {
+            // Assuming a simple NIC format validation (modify as necessary)
+            return Regex.IsMatch(nic, @"^\d{9}[Vv]$"); // For example, 123456789V
+        }
+    }
+
+    public class ValidationResult
+    {
+        public bool IsValid { get; }
+        public string ErrorMessage { get; }
+
+        public ValidationResult(bool isValid, string errorMessage)
+        {
+            IsValid = isValid;
+            ErrorMessage = errorMessage;
         }
     }
 }
