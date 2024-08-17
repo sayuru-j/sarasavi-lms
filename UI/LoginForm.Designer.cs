@@ -218,7 +218,7 @@
             private System.Windows.Forms.Button btnRegister;
             private System.Windows.Forms.Label lblPassword;
             private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+            private System.Windows.Forms.PictureBox pictureBox1;
+            private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

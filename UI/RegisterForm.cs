@@ -54,5 +54,10 @@ namespace SarasaviLMS.UI
         {
 
         }
+
+        private void text_AlreadyhaveAnAccount_Click(object sender, EventArgs e)
+        {
+            this.Close();  // Close RegisterForm and return to LoginForm
+        }
     }
 }

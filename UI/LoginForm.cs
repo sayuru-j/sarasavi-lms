@@ -38,20 +38,20 @@ namespace SarasaviLMS.UI
             if (user != null)
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Proceed to the main application or next form
-                // e.g., new MainForm().Show(); this.Hide();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.DialogResult = DialogResult.None;
             }
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.ShowDialog(); // Show the RegisterForm as a modal dialog
+            this.DialogResult = DialogResult.Retry;  // Set DialogResult to Retry to signal registration
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
