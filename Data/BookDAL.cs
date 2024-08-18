@@ -81,6 +81,49 @@ namespace SarasaviLMS.Data
             }
         }
 
+        public List<Book> GetAllBooks()
+        {
+            List<Book> books = new List<Book>();
+
+            using (SqlConnection conn = _helper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM Book";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                books.Add(new Book
+                                {
+                                    BookId = Convert.ToInt32(reader["BookId"]),
+                                    Title = reader["Title"].ToString(),
+                                    Author = reader["Author"].ToString(),
+                                    ISBN = reader["ISBN"].ToString(),
+                                    Publisher = reader["Publisher"].ToString(),
+                                    Classification = reader["Classification"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    LogError("SQL Error in GetAllBooks", ex);
+                }
+                catch (Exception ex)
+                {
+                    LogError("Unexpected Error in GetAllBooks", ex);
+                }
+            }
+
+            return books;
+        }
+
+
         public Book GetBookById(int id)
         {
             using (SqlConnection conn = _helper.GetConnection())

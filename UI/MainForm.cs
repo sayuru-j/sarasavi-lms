@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SarasaviLMS.UI.Controls;
+using SarasaviLMS.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,10 @@ namespace SarasaviLMS.UI
 {
     public partial class MainForm : Form
     {
+        private int _userId;
+        private string _username;
+        private string _role;
+
         public MainForm()
         {
             InitializeComponent();
@@ -31,7 +37,14 @@ namespace SarasaviLMS.UI
                 if (dialogResult == DialogResult.OK)  // Login successful
                 {
                     loggedIn = true;
+
+                    // Set State
+                    _userId = SessionManager.UserId;
+                    _username = SessionManager.Username;
+                    _role = SessionManager.Role;
+
                     this.Show(); // Show MainForm
+                    LoadDashboardBasedOnRole(_role);  // Load the appropriate dashboard
                 }
                 else if (dialogResult == DialogResult.Retry)  // User wants to register
                 {
@@ -46,5 +59,42 @@ namespace SarasaviLMS.UI
                 }
             }
         }
+
+        private void LoadDashboardBasedOnRole(string role)
+        {
+            UserControl dashboard = null;
+
+            switch (role)
+            {
+                case "Admin":
+                    dashboard = new AdminDashboardControl();
+                    break;
+                case "User":
+                    dashboard = new UserDashboardControl();
+                    break;
+                // Add more cases as needed
+                default:
+                    MessageBox.Show("Invalid role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                    break;
+            }
+
+            if (dashboard != null)
+            {
+                dashboard.Dock = DockStyle.Fill;
+                this.Controls.Clear();
+                this.Controls.Add(dashboard);
+            }
+        }
+
+        public void ClearAndAddControl(Control newControl)
+        {
+            // Clear existing controls
+            this.Controls.Clear();
+
+            // Add the new control
+            this.Controls.Add(newControl);
+        }
+
     }
 }

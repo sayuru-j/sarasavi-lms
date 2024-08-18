@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SarasaviLMS.Models
 {
-    internal class Inquiry
+    public class Inquiry
     {
         public int InquiryId { get; set; }
         public int UserId { get; set; } 

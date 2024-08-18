@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SarasaviLMS.Models
 {
-    internal class Copy
+    public class Copy
     {
         public int CopyId { get; set; }
         public int BookId { get; set; }  

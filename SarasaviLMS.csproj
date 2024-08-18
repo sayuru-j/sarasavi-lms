@@ -66,8 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BookDAL.cs" />
+    <Compile Include="Data\CopyDAL.cs" />
     <Compile Include="Data\DatabaseHelper.cs" />
+    <Compile Include="Data\InquiryDAL.cs" />
+    <Compile Include="Data\LoanDAL.cs" />
+    <Compile Include="Data\ReservationDAL.cs" />
     <Compile Include="Data\UserDAL.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Copy.cs" />
+    <Compile Include="Models\Inquiry.cs" />
+    <Compile Include="Models\Loan.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,7 +86,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\BookService.cs" />
+    <Compile Include="Services\CopyService.cs" />
+    <Compile Include="Services\InquiryService.cs" />
+    <Compile Include="Services\LoanService.cs" />
+    <Compile Include="Services\ReservationService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="UI\Controls\AddBookControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\AddBookControl.Designer.cs">
+      <DependentUpon>AddBookControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\AdminDashboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\AdminDashboardControl.Designer.cs">
+      <DependentUpon>AdminDashboardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\BookItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\BookItemControl.Designer.cs">
+      <DependentUpon>BookItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\BookManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\BookManagementControl.Designer.cs">
+      <DependentUpon>BookManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\UserDashboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\UserDashboardControl.Designer.cs">
+      <DependentUpon>UserDashboardControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +141,24 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\PasswordHelper.cs" />
+    <Compile Include="Utils\SessionManager.cs" />
     <Compile Include="Utils\ValidationResult.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\AddBookControl.resx">
+      <DependentUpon>AddBookControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\AdminDashboardControl.resx">
+      <DependentUpon>AdminDashboardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\BookManagementControl.resx">
+      <DependentUpon>BookManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\UserDashboardControl.resx">
+      <DependentUpon>UserDashboardControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

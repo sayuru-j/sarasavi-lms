@@ -1,5 +1,6 @@
 ﻿using SarasaviLMS.Models;
 using SarasaviLMS.Services;
+using SarasaviLMS.Utils;
 using System;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -33,6 +34,12 @@ namespace SarasaviLMS.UI
             if (user != null && user.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Handling session
+                SessionManager.UserId = user.UserId;
+                SessionManager.Username = user.Name.Split(' ')[0];
+                SessionManager.Role = user.Role;
+                
                 this.DialogResult = DialogResult.OK;  // Set DialogResult to OK on successful login
                 this.Close();
             }

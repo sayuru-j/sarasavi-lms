@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SarasaviLMS.Models
 {
-    internal class Loan
+    public class Loan
     {
         public int LoanId { get; set; }
         public int UserId { get; set; }
