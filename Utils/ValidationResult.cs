@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SarasaviLMS.Utils
 {
-    internal class ValidationResult
+    class ValidationResult
     {
         public bool IsValid { get; }
         public string ErrorMessage { get; }
