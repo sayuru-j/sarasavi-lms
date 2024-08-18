@@ -61,10 +61,10 @@ namespace SarasaviLMS.Services
                 return new ValidationResult(false, "NIC is required.");
             }
 
-            /*if (!IsValidNIC(user.NIC))
+            if (!IsValidNIC(user.NIC))
             {
                 return new ValidationResult(false, "Invalid NIC format.");
-            }*/
+            }
 
             if (string.IsNullOrWhiteSpace(user.Sex) || !(user.Sex == "M" || user.Sex == "F"))
             {
@@ -91,8 +91,14 @@ namespace SarasaviLMS.Services
 
         private bool IsValidNIC(string nic)
         {
-            // Assuming a simple NIC format validation (modify as necessary)
-            return Regex.IsMatch(nic, @"^\d{9}[Vv]$"); // For example, 123456789V
+            // Regex pattern for old NIC format: 9 digits followed by 'V' or 'v'
+            string oldNicPattern = @"^\d{9}[Vv]$";
+
+            // Regex pattern for new NIC format: 12 digits only
+            string newNicPattern = @"^\d{12}$";
+
+            // Check if NIC matches either the old or new format
+            return Regex.IsMatch(nic, oldNicPattern) || Regex.IsMatch(nic, newNicPattern);
         }
     }
 
