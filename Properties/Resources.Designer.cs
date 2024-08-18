@@ -83,6 +83,46 @@ namespace SarasaviLMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LibraryBackgroundArt {
+            get {
+                object obj = ResourceManager.GetObject("LibraryBackgroundArt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LibraryPhotoAsset {
+            get {
+                object obj = ResourceManager.GetObject("LibraryPhotoAsset", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LibraryPhotoAsset2 {
+            get {
+                object obj = ResourceManager.GetObject("LibraryPhotoAsset2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LibraryPhotoAsset3 {
+            get {
+                object obj = ResourceManager.GetObject("LibraryPhotoAsset3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LoginInfoPhoto {
             get {
                 object obj = ResourceManager.GetObject("LoginInfoPhoto", resourceCulture);

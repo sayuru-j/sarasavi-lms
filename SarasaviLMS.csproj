@@ -154,6 +154,9 @@
     <EmbeddedResource Include="UI\Controls\AdminDashboardControl.resx">
       <DependentUpon>AdminDashboardControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\BookItemControl.resx">
+      <DependentUpon>BookItemControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\BookManagementControl.resx">
       <DependentUpon>BookManagementControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +194,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LoginInfoPhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LibraryPhotoAsset.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LibraryPhotoAsset3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LibraryPhotoAsset2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LibraryBackgroundArt.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

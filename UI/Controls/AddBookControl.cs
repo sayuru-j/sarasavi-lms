@@ -33,6 +33,12 @@ namespace SarasaviLMS.UI.Controls
             txtPublisher.Text = currentBook.Publisher;
             txtClassification.Text = currentBook.Classification;
             btnSave.Text = "Update Book"; // Change button text to reflect update action
+            lblFormTitle.Text = "Update Books";
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            ReturnToBookManagementControl();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -97,8 +103,10 @@ namespace SarasaviLMS.UI.Controls
             // Replace AddBookControl with a new instance of BookManagementControl
             if (this.Parent is Form parentForm)
             {
-                var bookManagementControl = new BookManagementControl();
-                bookManagementControl.Dock = DockStyle.Fill;
+                var bookManagementControl = new BookManagementControl
+                {
+                    Dock = DockStyle.Fill
+                };
 
                 this.Parent.Controls.Remove(this);
                 parentForm.Controls.Add(bookManagementControl);

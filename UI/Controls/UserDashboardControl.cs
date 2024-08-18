@@ -9,6 +9,7 @@ namespace SarasaviLMS.UI.Controls
         public UserDashboardControl()
         {
             InitializeComponent();
+            this.lblTitle.Text = $"Welcome {SessionManager.Username}!";
         }
 
         private void btnBorrow_Click(object sender, EventArgs e)

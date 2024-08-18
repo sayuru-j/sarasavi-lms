@@ -33,7 +33,7 @@ namespace SarasaviLMS.UI.Controls
 
             foreach (var book in books)
             {
-                var bookItemControl = new BookItemControl(book.Title, book.Author, book.ISBN, book.Publisher);
+                var bookItemControl = new BookItemControl(book.Title, book.Author, book.ISBN, book.Publisher, book.Classification);
                 bookItemControl.OnUpdateClicked += () => UpdateBook(book);
                 bookItemControl.OnDeleteClicked += () => DeleteBook(book);
                 flowLayoutPanelBooks.Controls.Add(bookItemControl);

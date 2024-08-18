@@ -8,13 +8,14 @@ namespace SarasaviLMS.UI.Controls
         public event Action OnUpdateClicked;
         public event Action OnDeleteClicked;
 
-        public BookItemControl(string title, string author, string isbn, string publisher)
+        public BookItemControl(string title, string author, string isbn, string publisher, string classification)
         {
             InitializeComponent();
             lblTitle.Text = title;
             lblAuthor.Text = $"Author: {author}";
             lblISBN.Text = $"ISBN: {isbn}";
             lblPublisher.Text = $"Publisher: {publisher}";
+            lblClassification.Text = $"Classification: {classification}";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
