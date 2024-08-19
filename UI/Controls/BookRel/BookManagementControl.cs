@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using SarasaviLMS.Utils;
 
 namespace SarasaviLMS.UI.Controls
 {
@@ -53,6 +54,12 @@ namespace SarasaviLMS.UI.Controls
             newBookControl.Dock = DockStyle.Fill;  // Make sure the new control fills the parent
             this.Visible = false; // Hide the current control
         }
+
+        private void BtnGoBack_Click(object sender, EventArgs e)
+        {
+            Navigator.Navigate(ParentForm, NavigationTarget.AdminDashboard);
+        }
+
 
         private void TxtSearchBar_TextChanged(object sender, EventArgs e)
         {

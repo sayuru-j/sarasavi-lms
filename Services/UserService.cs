@@ -1,6 +1,7 @@
 ﻿using SarasaviLMS.Data;
 using SarasaviLMS.Models;
 using SarasaviLMS.Utils;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace SarasaviLMS.Services
@@ -37,10 +38,54 @@ namespace SarasaviLMS.Services
             }
         }
 
+        public bool UpdateUser(User user, out string errorMessage)
+        {
+            // Validate User object
+            var validationResult = ValidateUser(user);
+            if (!validationResult.IsValid)
+            {
+                errorMessage = validationResult.ErrorMessage;
+                return false;
+            }
+
+            // Update the user using the DAL
+            if (_userDAL.UpdateUser(user))
+            {
+                errorMessage = null;
+                return true;
+            }
+            else
+            {
+                errorMessage = "Failed to update the user.";
+                return false;
+            }
+        }
+
+        public bool DeleteUser(int userId, out string errorMessage)
+        {
+            // Delete the user using the DAL
+            if (_userDAL.DeleteUser(userId))
+            {
+                errorMessage = null;
+                return true;
+            }
+            else
+            {
+                errorMessage = "Failed to delete the user.";
+                return false;
+            }
+        }
+
         public User GetUserByNIC(string nic)
         {
             // Fetch user by NIC
             return _userDAL.GetUserByNIC(nic);
+        }
+
+        public List<User> GetAllUsers()
+        {
+            // Fetch all users
+            return _userDAL.GetAllUsers();
         }
 
         public bool IsNICUnique(string nic)

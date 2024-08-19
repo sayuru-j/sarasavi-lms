@@ -1,5 +1,6 @@
 ﻿using SarasaviLMS.Models;
 using SarasaviLMS.Services;
+using SarasaviLMS.Utils;
 using System;
 using System.Windows.Forms;
 
@@ -100,18 +101,7 @@ namespace SarasaviLMS.UI.Controls
 
         private void ReturnToBookManagementControl()
         {
-            // Replace AddBookControl with a new instance of BookManagementControl
-            if (this.Parent is Form parentForm)
-            {
-                var bookManagementControl = new BookManagementControl
-                {
-                    Dock = DockStyle.Fill
-                };
-
-                this.Parent.Controls.Remove(this);
-                parentForm.Controls.Add(bookManagementControl);
-                bookManagementControl.BringToFront();
-            }
+            Navigator.Navigate(ParentForm, NavigationTarget.BookManagement);
         }
     }
 }

@@ -39,7 +39,7 @@
             this.btnManageBooks.TabIndex = 0;
             this.btnManageBooks.Text = "Manage Books";
             this.btnManageBooks.UseVisualStyleBackColor = true;
-            this.btnManageBooks.Click += new System.EventHandler(this.btnManageBooks_Click);
+            this.btnManageBooks.Click += new System.EventHandler(this.BtnManageBooks_Click);
             // 
             // btnManageUsers
             // 

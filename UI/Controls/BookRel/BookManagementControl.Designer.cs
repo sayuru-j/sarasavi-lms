@@ -21,6 +21,7 @@
             this.btnAddNewBook = new System.Windows.Forms.Button();
             this.txtSearchBar = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanelBooks
@@ -69,11 +70,25 @@
             this.lblSearch.TabIndex = 3;
             this.lblSearch.Text = "Search";
             // 
+            // btnGoBack
+            // 
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.ForeColor = System.Drawing.Color.Crimson;
+            this.btnGoBack.Location = new System.Drawing.Point(176, 20);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(150, 30);
+            this.btnGoBack.TabIndex = 4;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.BtnGoBack_Click);
+            // 
             // BookManagementControl
             // 
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::SarasaviLMS.Properties.Resources.LibraryPhotoAsset2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearchBar);
             this.Controls.Add(this.btnAddNewBook);
@@ -92,5 +107,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }

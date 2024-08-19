@@ -73,6 +73,7 @@
     <Compile Include="Data\LoanDAL.cs" />
     <Compile Include="Data\ReservationDAL.cs" />
     <Compile Include="Data\UserDAL.cs" />
+    <Compile Include="Enums\NavigationTarget.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Copy.cs" />
     <Compile Include="Models\Inquiry.cs" />
@@ -92,11 +93,17 @@
     <Compile Include="Services\LoanService.cs" />
     <Compile Include="Services\ReservationService.cs" />
     <Compile Include="Services\UserService.cs" />
-    <Compile Include="UI\Controls\AddBookControl.cs">
+    <Compile Include="UI\Controls\BookRel\AddBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Controls\AddBookControl.Designer.cs">
+    <Compile Include="UI\Controls\BookRel\AddBookControl.Designer.cs">
       <DependentUpon>AddBookControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\AddUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\AddUserControl.Designer.cs">
+      <DependentUpon>AddUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\AdminDashboardControl.cs">
       <SubType>UserControl</SubType>
@@ -104,23 +111,35 @@
     <Compile Include="UI\Controls\AdminDashboardControl.Designer.cs">
       <DependentUpon>AdminDashboardControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\BookItemControl.cs">
+    <Compile Include="UI\Controls\BookRel\BookItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Controls\BookItemControl.Designer.cs">
+    <Compile Include="UI\Controls\BookRel\BookItemControl.Designer.cs">
       <DependentUpon>BookItemControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\BookManagementControl.cs">
+    <Compile Include="UI\Controls\BookRel\BookManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Controls\BookManagementControl.Designer.cs">
+    <Compile Include="UI\Controls\BookRel\BookManagementControl.Designer.cs">
       <DependentUpon>BookManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\InquiryManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\InquiryManagementControl.Designer.cs">
+      <DependentUpon>InquiryManagementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\UserDashboardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Controls\UserDashboardControl.Designer.cs">
       <DependentUpon>UserDashboardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\UserManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\UserManagementControl.Designer.cs">
+      <DependentUpon>UserManagementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +159,7 @@
     <Compile Include="UI\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Navigator.cs" />
     <Compile Include="Utils\PasswordHelper.cs" />
     <Compile Include="Utils\SessionManager.cs" />
     <Compile Include="Utils\ValidationResult.cs" />
@@ -148,16 +168,19 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Controls\AddBookControl.resx">
+    <EmbeddedResource Include="UI\Controls\BookRel\AddBookControl.resx">
       <DependentUpon>AddBookControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\AddUserControl.resx">
+      <DependentUpon>AddUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\AdminDashboardControl.resx">
       <DependentUpon>AdminDashboardControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Controls\BookItemControl.resx">
+    <EmbeddedResource Include="UI\Controls\BookRel\BookItemControl.resx">
       <DependentUpon>BookItemControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Controls\BookManagementControl.resx">
+    <EmbeddedResource Include="UI\Controls\BookRel\BookManagementControl.resx">
       <DependentUpon>BookManagementControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\UserDashboardControl.resx">

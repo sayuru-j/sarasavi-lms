@@ -11,14 +11,14 @@ namespace SarasaviLMS.UI.Controls
             InitializeComponent();
         }
 
-        private void btnManageBooks_Click(object sender, EventArgs e)
+        private void BtnManageBooks_Click(object sender, EventArgs e)
         {
             LoadBookManagementControl();
         }
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Manage Users clicked!");
+            LoadUserManagementControl();
         }
 
         private void btnManageLoans_Click(object sender, EventArgs e)
@@ -47,6 +47,19 @@ namespace SarasaviLMS.UI.Controls
             // Clear the current controls and add the BookManagementControl
             var parentForm = this.FindForm() as MainForm;
             parentForm?.ClearAndAddControl(bookManagementControl);
+        }
+
+        private void LoadUserManagementControl()
+        {
+            // Create an instance of the UserManagementControl
+            UserManagementControl userManagementControl = new UserManagementControl
+            {
+                Dock = DockStyle.Fill
+            };
+
+            // Clear the current controls and add the UserManagementControl
+            var parentForm = this.FindForm() as MainForm;
+            parentForm?.ClearAndAddControl(userManagementControl);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
