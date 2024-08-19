@@ -129,10 +129,10 @@
     <Compile Include="UI\Controls\InquiryManagementControl.Designer.cs">
       <DependentUpon>InquiryManagementControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\UserRel\UserDashboardControl.cs">
+    <Compile Include="UI\Controls\UserDashboardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Controls\UserRel\UserDashboardControl.Designer.cs">
+    <Compile Include="UI\Controls\UserDashboardControl.Designer.cs">
       <DependentUpon>UserDashboardControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\UserRel\UserManagementControl.cs">
@@ -183,7 +183,7 @@
     <EmbeddedResource Include="UI\Controls\BookRel\BookManagementControl.resx">
       <DependentUpon>BookManagementControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Controls\UserRel\UserDashboardControl.resx">
+    <EmbeddedResource Include="UI\Controls\UserDashboardControl.resx">
       <DependentUpon>UserDashboardControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
