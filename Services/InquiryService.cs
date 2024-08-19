@@ -1,7 +1,6 @@
 ﻿using SarasaviLMS.Data;
 using SarasaviLMS.Models;
 using SarasaviLMS.Utils;
-using System;
 using System.Collections.Generic;
 
 namespace SarasaviLMS.Services
@@ -73,6 +72,12 @@ namespace SarasaviLMS.Services
             return _inquiryDAL.GetInquiriesByUserId(userId);
         }
 
+        public List<Inquiry> GetAllInquiries()
+        {
+            // Fetch all inquiries
+            return _inquiryDAL.GetAllInquiries();
+        }
+
         public bool DeleteInquiry(int inquiryId, out string errorMessage)
         {
             // Delete the inquiry
@@ -100,7 +105,7 @@ namespace SarasaviLMS.Services
                 return new ValidationResult(false, "Invalid Book ID.");
             }
 
-            if (inquiry.InquiryDate == default(DateTime))
+            if (inquiry.InquiryDate == default)
             {
                 return new ValidationResult(false, "Inquiry Date is required.");
             }

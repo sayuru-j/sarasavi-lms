@@ -13,11 +13,13 @@ namespace SarasaviLMS.UI.Controls
 
         private readonly BookService bookService;
         private readonly Book currentBook; // Holds the book being updated
+        private readonly CopyService copyService;
 
         public AddBookControl(Book book = null) // Optional book parameter for updating
         {
             InitializeComponent();
             bookService = new BookService();
+            copyService = new CopyService();
 
             if (book != null)
             {
@@ -103,5 +105,33 @@ namespace SarasaviLMS.UI.Controls
         {
             Navigator.Navigate(ParentForm, NavigationTarget.BookManagement);
         }
+
+        private void BtnMakeCopy_Click(object sender, EventArgs e)
+        {
+            // Fetch the next copy number for this book
+            int nextCopyNumber = copyService.GetNextCopyNumber(currentBook.BookId);
+
+            // Create a new Copy object with auto-calculated fields
+            var copy = new Copy
+            {
+                BookId = currentBook.BookId,
+                CopyNumber = nextCopyNumber,
+                Status = "Available",  // Set default status
+                IsReference = false    // Assuming default as non-reference copy; modify as needed
+            };
+
+            // Add the new copy using the service
+            bool success = copyService.AddNewCopy(copy, out string errorMessage);
+
+            if (success)
+            {
+                MessageBox.Show("New copy created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Failed to create new copy. {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

@@ -37,6 +37,19 @@ namespace SarasaviLMS.Services
             }
         }
 
+        public List<Copy> GetAvailableCopiesByBookId(int bookId)
+        {
+            return _copyDAL.GetAvailableCopiesByBookId(bookId);
+        }
+
+
+        public int GetNextCopyNumber(int bookId)
+        {
+            // Fetch the current maximum CopyNumber for this book and add 1
+            int currentMaxCopyNumber = _copyDAL.GetMaxCopyNumberForBook(bookId);
+            return currentMaxCopyNumber + 1;
+        }
+
         public bool UpdateCopy(Copy copy, out string errorMessage)
         {
             // Validate Copy object

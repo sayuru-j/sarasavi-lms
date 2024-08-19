@@ -52,7 +52,7 @@
             this.btnManageUsers.TabIndex = 1;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.UseVisualStyleBackColor = true;
-            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
+            this.btnManageUsers.Click += new System.EventHandler(this.BtnManageUsers_Click);
             // 
             // btnManageLoans
             // 
@@ -65,7 +65,7 @@
             this.btnManageLoans.TabIndex = 2;
             this.btnManageLoans.Text = "Manage Loans";
             this.btnManageLoans.UseVisualStyleBackColor = true;
-            this.btnManageLoans.Click += new System.EventHandler(this.btnManageLoans_Click);
+            this.btnManageLoans.Click += new System.EventHandler(this.BtnManageLoans_Click);
             // 
             // btnManageReservations
             // 
@@ -78,7 +78,7 @@
             this.btnManageReservations.TabIndex = 3;
             this.btnManageReservations.Text = "Manage Reservations";
             this.btnManageReservations.UseVisualStyleBackColor = true;
-            this.btnManageReservations.Click += new System.EventHandler(this.btnManageReservations_Click);
+            this.btnManageReservations.Click += new System.EventHandler(this.BtnManageReservations_Click);
             // 
             // btnManageInquiries
             // 
@@ -91,7 +91,7 @@
             this.btnManageInquiries.TabIndex = 4;
             this.btnManageInquiries.Text = "Manage Inquiries";
             this.btnManageInquiries.UseVisualStyleBackColor = true;
-            this.btnManageInquiries.Click += new System.EventHandler(this.btnManageInquiries_Click);
+            this.btnManageInquiries.Click += new System.EventHandler(this.BtnManageInquiries_Click);
             // 
             // btnLogOut
             // 

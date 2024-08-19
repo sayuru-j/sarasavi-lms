@@ -99,6 +99,24 @@
     <Compile Include="UI\Controls\BookRel\AddBookControl.Designer.cs">
       <DependentUpon>AddBookControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\InquiryRel\AddInquiryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\InquiryRel\AddInquiryControl.Designer.cs">
+      <DependentUpon>AddInquiryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\InquiryRel\MyInquiriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\InquiryRel\MyInquiriesControl.Designer.cs">
+      <DependentUpon>MyInquiriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\LoanRel\AddBorrowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\LoanRel\AddBorrowControl.Designer.cs">
+      <DependentUpon>AddBorrowControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Controls\UserRel\AddUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,10 +141,10 @@
     <Compile Include="UI\Controls\BookRel\BookManagementControl.Designer.cs">
       <DependentUpon>BookManagementControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\InquiryManagementControl.cs">
+    <Compile Include="UI\Controls\InquiryRel\InquiryManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Controls\InquiryManagementControl.Designer.cs">
+    <Compile Include="UI\Controls\InquiryRel\InquiryManagementControl.Designer.cs">
       <DependentUpon>InquiryManagementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\UserDashboardControl.cs">
@@ -170,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\BookRel\AddBookControl.resx">
       <DependentUpon>AddBookControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\InquiryRel\AddInquiryControl.resx">
+      <DependentUpon>AddInquiryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\UserRel\AddUserControl.resx">
       <DependentUpon>AddUserControl.cs</DependentUpon>
@@ -229,6 +250,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LibraryBackgroundArt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Controls\CopyRel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

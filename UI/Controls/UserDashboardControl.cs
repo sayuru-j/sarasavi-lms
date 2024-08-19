@@ -14,7 +14,7 @@ namespace SarasaviLMS.UI.Controls
 
         private void btnBorrow_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Borrow clicked!");
+            Navigator.Navigate(ParentForm, NavigationTarget.Borrow);
         }
 
         private void btnReserve_Click(object sender, EventArgs e)
@@ -37,9 +37,9 @@ namespace SarasaviLMS.UI.Controls
             MessageBox.Show("My Reservations clicked!");
         }
 
-        private void btnMyInquiries_Click(object sender, EventArgs e)
+        private void BtnMyInquiries_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("My Inquiries clicked!");
+            Navigator.Navigate(ParentForm, NavigationTarget.MyInquiries);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

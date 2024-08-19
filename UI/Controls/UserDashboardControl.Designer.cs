@@ -1,4 +1,6 @@
-﻿namespace SarasaviLMS.UI.Controls
+﻿using System;
+
+namespace SarasaviLMS.UI.Controls
 {
     partial class UserDashboardControl
     {
@@ -105,7 +107,7 @@
             this.btnMyInquiries.TabIndex = 5;
             this.btnMyInquiries.Text = "My Inquiries";
             this.btnMyInquiries.UseVisualStyleBackColor = true;
-            this.btnMyInquiries.Click += new System.EventHandler(this.btnMyInquiries_Click);
+            this.btnMyInquiries.Click += new System.EventHandler(this.BtnMyInquiries_Click);
             // 
             // btnLogOut
             // 

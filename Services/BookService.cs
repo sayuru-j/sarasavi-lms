@@ -69,6 +69,12 @@ namespace SarasaviLMS.Services
             return _bookDAL.GetAllBooks();
         }
 
+        public List<Book> GetAvailableBooks()
+        {
+            // Fetch and return a list of available books
+            return _bookDAL.GetAvailableBooks();
+        }
+
 
         public Book GetBookById(int id)
         {

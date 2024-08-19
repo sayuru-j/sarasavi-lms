@@ -13,53 +13,27 @@ namespace SarasaviLMS.UI.Controls
 
         private void BtnManageBooks_Click(object sender, EventArgs e)
         {
-            LoadBookManagementControl();
+            Navigator.Navigate(ParentForm, NavigationTarget.BookManagement);
         }
 
-        private void btnManageUsers_Click(object sender, EventArgs e)
+        private void BtnManageUsers_Click(object sender, EventArgs e)
         {
-            LoadUserManagementControl();
+            Navigator.Navigate(ParentForm, NavigationTarget.UserManagement);
         }
 
-        private void btnManageLoans_Click(object sender, EventArgs e)
+        private void BtnManageLoans_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Manage Loans clicked!");
         }
 
-        private void btnManageReservations_Click(object sender, EventArgs e)
+        private void BtnManageReservations_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Manage Reservations clicked!");
         }
 
-        private void btnManageInquiries_Click(object sender, EventArgs e)
+        private void BtnManageInquiries_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Manage Inquiries clicked!");
-        }
-
-        private void LoadBookManagementControl()
-        {
-            // Create an instance of the BookManagementControl
-            BookManagementControl bookManagementControl = new BookManagementControl
-            {
-                Dock = DockStyle.Fill
-            };
-
-            // Clear the current controls and add the BookManagementControl
-            var parentForm = this.FindForm() as MainForm;
-            parentForm?.ClearAndAddControl(bookManagementControl);
-        }
-
-        private void LoadUserManagementControl()
-        {
-            // Create an instance of the UserManagementControl
-            UserManagementControl userManagementControl = new UserManagementControl
-            {
-                Dock = DockStyle.Fill
-            };
-
-            // Clear the current controls and add the UserManagementControl
-            var parentForm = this.FindForm() as MainForm;
-            parentForm?.ClearAndAddControl(userManagementControl);
+            Navigator.Navigate(ParentForm, NavigationTarget.InquiryManagement);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

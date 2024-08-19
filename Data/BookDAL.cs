@@ -123,6 +123,48 @@ namespace SarasaviLMS.Data
             return books;
         }
 
+        public List<Book> GetAvailableBooks()
+        {
+            List<Book> books = new List<Book>();
+
+            using (SqlConnection conn = _helper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM Book WHERE BookId IN (SELECT DISTINCT BookId FROM Copy WHERE Status = 'Available')";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                books.Add(new Book
+                                {
+                                    BookId = Convert.ToInt32(reader["BookId"]),
+                                    Title = reader["Title"].ToString(),
+                                    Author = reader["Author"].ToString(),
+                                    ISBN = reader["ISBN"].ToString(),
+                                    Publisher = reader["Publisher"].ToString(),
+                                    Classification = reader["Classification"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    LogError("SQL Error in GetAvailableBooks", ex);
+                }
+                catch (Exception ex)
+                {
+                    LogError("Unexpected Error in GetAvailableBooks", ex);
+                }
+            }
+
+            return books;
+        }
+
 
         public Book GetBookById(int id)
         {

@@ -8,6 +8,8 @@
         ReservationManagement,
         InquiryManagement,
         AdminDashboard,
-        UserDashboard
+        UserDashboard,
+        MyInquiries,
+        Borrow
     }
 }

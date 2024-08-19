@@ -1,6 +1,8 @@
 ﻿using SarasaviLMS.UI.Controls;
 using SarasaviLMS.UI;
 using System.Windows.Forms;
+using SarasaviLMS.UI.Controls.InquiryRel;
+using SarasaviLMS.UI.Controls.LoanRel;
 
 namespace SarasaviLMS.Utils
 {
@@ -42,21 +44,37 @@ namespace SarasaviLMS.Utils
                     };
                     break;
 
-               /* case NavigationTarget.LoanManagement:
-                    // Assuming you have a LoanManagementControl
-                    controlToLoad = new LoanManagementControl
+                /* case NavigationTarget.LoanManagement:
+                     // Assuming you have a LoanManagementControl
+                     controlToLoad = new LoanManagementControl
+                     {
+                         Dock = DockStyle.Fill
+                     };
+                     break;
+
+                 case NavigationTarget.ReservationManagement:
+                     // Assuming you have a ReservationManagementControl
+                     controlToLoad = new ReservationManagementControl
+                     {
+                         Dock = DockStyle.Fill
+                     };
+                     break;*/
+
+                case NavigationTarget.MyInquiries:
+                    // Assuming you have an InquiryManagementControl
+                    controlToLoad = new MyInquiriesControl
                     {
                         Dock = DockStyle.Fill
                     };
                     break;
 
-                case NavigationTarget.ReservationManagement:
-                    // Assuming you have a ReservationManagementControl
-                    controlToLoad = new ReservationManagementControl
+                case NavigationTarget.Borrow:
+                    // Assuming you have an InquiryManagementControl
+                    controlToLoad = new AddBorrowControl
                     {
                         Dock = DockStyle.Fill
                     };
-                    break;*/
+                    break;
 
                 case NavigationTarget.InquiryManagement:
                     // Assuming you have an InquiryManagementControl

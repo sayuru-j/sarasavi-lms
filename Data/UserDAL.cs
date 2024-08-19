@@ -114,6 +114,7 @@ namespace SarasaviLMS.Data
             }
         }
 
+
         public User GetUserByNIC(string nic)
         {
             using (SqlConnection conn = _helper.GetConnection())
